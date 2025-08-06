@@ -1,81 +1,59 @@
-# FletDnsApp app
+# 🚀 Quick DNS Changer
 
-## Run the app
+A simple and fast desktop application for Windows that allows you to easily manage and switch your DNS profiles. Built with Python and the [Flet](https://flet.dev/) framework.
 
-### uv
 
-Run as a desktop app:
 
-```
-uv run flet run
-```
+---
 
-Run as a web app:
+### ✨ Features
 
-```
-uv run flet run --web
-```
+* **Graphical User Interface:** Easily manage DNS settings without complex commands.
+* **Profile Management:** Add, delete, and select custom DNS profiles.
+* **One-Click Apply:** Change your active DNS with a single click.
+* **Automatic Reset:** Revert DNS settings back to automatic (DHCP) effortlessly.
+* **Local Storage:** Your custom profiles are securely saved in your local `AppData` folder.
 
-### Poetry
+---
 
-Install dependencies from `pyproject.toml`:
+### ⚠️ Prerequisites
 
-```
-poetry install
-```
+1.  **Operating System:** **Windows** is required due to the use of `netsh` commands.
+2.  **Admin Privileges:** The application must be **run as an administrator** to modify network settings.
 
-Run as a desktop app:
+---
 
-```
-poetry run flet run
-```
+### 📥 How to Use (Users)
 
-Run as a web app:
+1.  Go to the **[Releases](https://github.com/EFFIESL/Quick-DNS-Changer/releases)** page of this repository.
+2.  Download the latest version's `.zip` file (e.g., `QuickDNSChanger-windows.zip`).
+3.  Extract the archive and run `main.exe` as an administrator.
 
-```
-poetry run flet run --web
-```
+---
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
+### 🛠️ How to Run (Developers)
 
-## Build the app
+1.  Clone this repository:
+    ```bash
+    git clone [https://github.com/EFFIESL/Quick-DNS-Changer.git](https://github.com/EFFIESL/Quick-DNS-Changer.git)
+    cd YOUR_REPO
+    ```
+2.  Create and activate a Python virtual environment:
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+3.  Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  Run the application:
+    ```bash
+    flet run src/main.py
+    ```
 
-### Android
+---
 
-```
-flet build apk -v
-```
+### 📄 License
 
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
-
-### iOS
-
-```
-flet build ipa -v
-```
-
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
-
-### macOS
-
-```
-flet build macos -v
-```
-
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
-
-### Linux
-
-```
-flet build linux -v
-```
-
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
-
-### Windows
-
-```
-flet build windows -v
-```
-
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+This project is licensed under the MIT License.
