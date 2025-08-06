@@ -1,0 +1,42 @@
+name: Build and Release Flet App
+
+on:
+  push:
+    tags:
+      - 'v*' # فقط زمانی اجرا می‌شود که یک تگ جدید (مثل v1.0) پوش شود
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest # سیستم عامل ماشین مجازی را ویندوز انتخاب می‌کند
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        # این مرحله تمام کدهای شما را از گیت‌هاب دانلود می‌کند
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+        # پایتون را روی ماشین مجازی نصب می‌کند
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+        # کتابخانه‌های لیست شده در requirements.txt را نصب می‌کند
+
+      - name: Build Flet app
+        run: flet build windows src/main.py --no-flutter
+        # برنامه را با Flet می‌سازد. دقت کن که آدرس فایل اصلی را به درستی داده‌ایم
+
+      - name: Zip the build output
+        run: Compress-Archive -Path build/windows/runner/Release -DestinationPath QuickDNSChanger-windows.v${{ github.ref_name }}.zip
+        # پوشه خروجی را برای انتشار، زیپ می‌کند
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: QuickDNSChanger-windows.v${{ github.ref_name }}.zip
+          fail_on_unmatched_files: true
+        # یک Release جدید در گیت‌هاب ساخته و فایل زیپ را آنجا آپلود می‌کند
