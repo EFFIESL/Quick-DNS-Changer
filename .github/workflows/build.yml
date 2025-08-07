@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build Flet app
-        run: flet build windows src/main.py --no-flutter
+        run: flet build windows src/main.py --assets src/assets --no-flutter
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
