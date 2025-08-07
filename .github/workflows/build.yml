@@ -1,8 +1,33 @@
-            - name: Flet Windows based on PyInstaller
-  # You may pin to the exact commit or the version.
-  # uses: 0h-n0/flet-action-windows@1ff842fcea7423fd0ab12626924eace340df3d63
-  uses: 0h-n0/flet-action-windows@0.1.0
-  with:
-    # set entry-point script file.
-    path: # default is main.py
-          
+name: Build Flet App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build Flet app
+        run: flet build windows src/main.py --no-flutter
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: flet-windows-app
+          path: build/windows/runner/Release/
