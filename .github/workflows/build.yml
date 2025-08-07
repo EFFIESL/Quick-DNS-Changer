@@ -1,31 +1,31 @@
-name: Build Flet App
+name: Build Flet EXE
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
-      - name: Install Flet (Latest Version)
-        run: pip install --upgrade flet
+      - name: Install dependencies
+        run: |
+          pip install flet flet_packager
 
-      - name: Build Flet app
-        run: flet build windows src/main.py --assets src/assets --no-flutter
+      - name: Build EXE with flet_packager
+        run: |
+          flet pack main.py
 
-      - name: Upload Artifact
+      - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
-          name: flet-windows-app
-          path: build/windows/runner/Release/
+          name: flet-app-exe
+          path: dist/main/main.exe
