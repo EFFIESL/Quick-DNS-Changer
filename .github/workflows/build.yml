@@ -18,10 +18,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Install Flet (Latest Version)
+        run: pip install --upgrade flet
 
       - name: Build Flet app
         run: flet build windows src/main.py --assets src/assets --no-flutter
