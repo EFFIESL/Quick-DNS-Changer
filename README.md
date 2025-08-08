@@ -41,6 +41,9 @@ Changing your DNS can offer several benefits, such as:
 2.  Download the latest version's `.zip` file (e.g., `QuickDNSChanger-windows.zip`).
 3.  Extract the archive and run `main.exe` as an administrator.
 
+OR
+
+Download from this link https://github.com/EFFIESL/Quick-DNS-Changer/actions/runs/16829580351/artifacts/3719210242
 ---
 
 ### 🛠️ How to Run (Developers)
