@@ -18,6 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: pip install flet --upgrade
+      - name: Install dependencies
+        run: pip install pyinstaller
 
       - name: Build EXE with Flet
         # این خط تغییر کرده است
