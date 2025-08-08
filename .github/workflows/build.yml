@@ -17,15 +17,13 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          pip install flet flet_packager
+        run: pip install flet --upgrade
 
-      - name: Build EXE with flet_packager
-        run: |
-          flet pack main.py
+      - name: Build EXE with Flet
+        run: flet pack src/main.py
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
-          name: flet-app-exe
-          path: dist/main/main.exe
+          name: QuickDNSChanger-Windows
+          path: dist/main.exe
