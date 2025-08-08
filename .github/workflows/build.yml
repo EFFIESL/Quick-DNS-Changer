@@ -18,12 +18,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install flet --upgrade
-      - name: Install dependencies
-        run: pip install pyinstaller
 
       - name: Build EXE with Flet
-        # این خط تغییر کرده است
-        run: flet pack src/main.py --add-data "src/assets;assets"
+        run: flet pack src/main.py --icon src/assets/icon.png --add-data "src/assets;assets"
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
