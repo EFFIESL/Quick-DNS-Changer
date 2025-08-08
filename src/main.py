@@ -32,9 +32,7 @@ def main(page: ft.Page):
     page.window.resizable = False
     page.vertical_alignment = ft.MainAxisAlignment.START
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "assets", "icon.png"))
-    page.window.icon = icon_path
-
+    
     dns_dropdown = ft.Dropdown(
         expand=True,
         hint_text="Select a DNS profile",
@@ -261,7 +259,8 @@ def main(page: ft.Page):
         page.add(
             ft.Row([ft.IconButton(on_click=open_main_view, icon=ft.Icons.ARROW_BACK), ft.Text("Settings", size=20)]),
             ft.ElevatedButton("erfansalimi1385@gmail.com", icon=ft.Icons.EMAIL),
-            ft.ElevatedButton("EFFIESL",icon="assets/github-mark-white.png")
+            ft.ElevatedButton(
+                content=ft.Row([ft.Image(src="github-mark.png", width=24, height=24) , ft.Text("Github Page")]), on_click=lambda e:page.launch_url("https://github.com/EFFIESL/Quick-DNS-Changer"))
         )
         page.update()
 
@@ -329,4 +328,4 @@ def main(page: ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(target=main, assets_dir="assets")
