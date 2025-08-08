@@ -16,8 +16,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install flet
         run: pip install flet --upgrade
+      - name: Install pyinstaller
+        run: pip install pyinstaller
 
       - name: Build EXE with Flet
         run: flet pack src/main.py --icon src/assets/icon.png --add-data "src/assets;assets"
