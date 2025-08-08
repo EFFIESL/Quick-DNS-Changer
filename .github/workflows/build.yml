@@ -20,7 +20,8 @@ jobs:
         run: pip install flet --upgrade
 
       - name: Build EXE with Flet
-        run: flet pack src/main.py
+        # این خط تغییر کرده است
+        run: flet pack src/main.py --add-data "src/assets;assets"
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
