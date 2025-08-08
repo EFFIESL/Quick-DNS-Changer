@@ -1,18 +1,30 @@
 # 🚀 Quick DNS Changer
 
-A simple and fast desktop application for Windows that allows you to easily manage and switch your DNS profiles. Built with Python and the [Flet](https://flet.dev/) framework.
+A simple and fast desktop application for Windows that allows you to easily manage and switch your DNS profiles. Built with Python and the powerful [Flet](https://flet.dev/) framework.
 
+<div align="center">
 
+  </div>
 
 ---
 
-### ✨ Features
+### ✨ Why Use Quick DNS Changer?
 
-* **Graphical User Interface:** Easily manage DNS settings without complex commands.
-* **Profile Management:** Add, delete, and select custom DNS profiles.
+Changing your DNS can offer several benefits, such as:
+* **Increased Browse Speed:** Connect to faster DNS servers to load websites quicker.
+* **Enhanced Security:** Use DNS servers that protect you from phishing attacks and malicious websites.
+* **Better Access:** Bypass internet restrictions and access geo-blocked content.
+
+**Quick DNS Changer** simplifies this process, eliminating the need for complex commands or navigating through system settings!
+
+---
+
+### 📋 Key Features
+
+* **Graphical User Interface:** Easily manage DNS settings without touching the command line.
+* **Profile Management:** Add, delete, and select your custom DNS profiles.
 * **One-Click Apply:** Change your active DNS with a single click.
-* **Automatic Reset:** Revert DNS settings back to automatic (DHCP) effortlessly.
-* **Local Storage:** Your custom profiles are securely saved in your local `AppData` folder.
+* **Automatic Reset:** Effortlessly revert your DNS settings back to the default (DHCP).
 
 ---
 
@@ -36,7 +48,7 @@ A simple and fast desktop application for Windows that allows you to easily mana
 1.  Clone this repository:
     ```bash
     git clone [https://github.com/EFFIESL/Quick-DNS-Changer.git](https://github.com/EFFIESL/Quick-DNS-Changer.git)
-    cd YOUR_REPO
+    cd Quick-DNS-Changer
     ```
 2.  Create and activate a Python virtual environment:
     ```bash
@@ -51,7 +63,23 @@ A simple and fast desktop application for Windows that allows you to easily mana
     ```bash
     flet run src/main.py
     ```
+    
+---
+### 🤝 Contributing
 
+Contributions are welcome! If you have an idea for an improvement or have found a bug, please open an **Issue**. To submit your changes, please create a **Pull Request**.
+
+---
+
+### ❤️ Support the Project
+
+If you find this application helpful, please consider supporting its development. Your support is greatly appreciated!
+
+Or you can donate via cryptocurrency:
+* **BTC:** `bc1qgkyuyh507t34tduyv5e8snkwug605lqhwlzmve`
+* **ETH:** `0xaF6982ADcfF75352Fd0AA286673b7a717599eA68`
+* **XRP:** `rPtUiLKX3WaUVQGWMgjwYjGqdaord5tmWy`
+* **USDT (TRC20):** `TX3rFckK7XGhe9sXs1uYR7wgHmcycBvhgD`
 ---
 
 ### 📄 License
